@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=61.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vectorizers"
+version = "0.2.2"
+maintainers = [{name = "John Healy", email = "leland.mcinnes@gmail.com"}, {name = "Leland McInnes"}, {name = "Colin Weir"}]
+license = "BSD-3-Clause"
+description = "A suite of vectorizers for various data types."
+readme = "README.rst"
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Topic :: Software Development",
+    "Topic :: Scientific/Engineering",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Operating System :: Unix",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "scikit-learn",
+    "numba",
+    "pynndescent",
+    "dask",
+]
+
+[project.urls]
+Homepage = "https://github.com/TutteInstitute/vectorizers"
+Download = "https://github.com/TutteInstitute/vectorizers"
+
+[project.optional-dependencies]
+tests = ["pytest", "pytest-cov"]
+docs = [
+    "sphinx",
+    "sphinx-gallery",
+    "nbsphinx",
+    "sphinx_rtd_theme",
+    "numpydoc",
+    "matplotlib",
+]
+
+[tool.setuptools]
+zip-safe = false
+include-package-data = false
+
+[tool.setuptools.packages]
+find = {namespaces = false}
+
+[tool.pytest]
+addopts = "--doctest-modules"
