@@ -49,6 +49,9 @@ docs = [
     "matplotlib",
 ]
 
+[dependency-groups]
+cicd = ["pytest", "pytest-azurepipelines", "pytest-cov"]
+
 [tool.setuptools]
 zip-safe = false
 include-package-data = false
@@ -57,4 +60,4 @@ include-package-data = false
 find = {namespaces = false}
 
 [tool.pytest]
-addopts = "--doctest-modules"
+addopts = ["--doctest-modules"]
