@@ -133,7 +133,7 @@ def numba_build_multi_skip_grams(
                         row = target_word
                         col = context + i * n_unique_tokens
                         key = col + array_mul * row
-                        coo_append(coo_data[i], (row, col, val, key))
+                        coo_data[i] = coo_append(coo_data[i], (row, col, val, key))
 
     for coo in coo_data:
         coo_sum_duplicates(coo)
